@@ -15,17 +15,18 @@ permissions:
 jobs:
   build:
 
-  runs-on: ubuntu-latest
+   runs-on: ubuntu-latest
 
-strategy:
+   strategy:
       matrix:
         python-version: ['3.8', '3.9', '3.10']
-steps:
+   steps:
     - uses: actions/checkout@v4
     - name: Use Python ${{matrix.python-version}}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+
 
     - name: Install dependencies
       run: |
